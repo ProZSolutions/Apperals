@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#101010</color>
+    <color name="secondaryColor">#A1A8B9</color>
+    <color name="tertiaryColor">#F2F2F2</color>
+    <color name="purple_200">#101010</color>
+    <color name="color_primary">#101010</color>
+    <color name="purple_500">#101010</color>
 </resources>

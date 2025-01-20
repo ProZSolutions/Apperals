@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
@@ -16,11 +19,20 @@ import in.proz.apperals.ProductImageView.ThumbnailAdapter;
 public class MainActivity extends AppCompatActivity {
     private PhotoView mainImageView;
     private RecyclerView recyclerView;
+    TextView cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        cart = findViewById(R.id.cart);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getApplicationContext(), AddCartActivity.class);
+                startActivity(intent);
+            }
+        });
         mainImageView = findViewById(R.id.mainImageView);
         recyclerView = findViewById(R.id.recyclerView);
 

@@ -2,6 +2,11 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Apperals" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+     <item name="colorPrimary">@color/primaryColor</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Other theme attributes -->
+        <item name="android:statusBarColor">@color/primaryColor</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- For dark text/icons -->
     </style>
 </resources>

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Apperals</string>
+    <string name="app_name">Mamba Athlete</string>
+    <string name="sign_up_text">Ready to dive in? Log in now for the full\n experience, or feel free to continue
+   \n exploring at your own pace!</string>
+    <string name="reg">SIGN IN OR REGISTER</string>
+    <string name="nav">NAVIGATE THE APP</string>
+    <string name="login"><u>Login</u></string>
+    <string name="forgot"><u>Forgot Password</u></string>
 </resources>
