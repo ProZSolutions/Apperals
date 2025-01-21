@@ -1,21 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_white"
     android:layout_height="match_parent"
-    android:background="@color/tertiaryColor"
     android:orientation="vertical">
 
     <!-- Your main content here -->
 
     <LinearLayout
+        android:orientation="vertical"
+
+        android:background="@color/light_white"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/letterLayout"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                 android:background="@drawable/circle_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="AB"
+                    android:textSize="13dp"
+                    android:textColor="@color/primaryColor"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/primaryColor"
+                android:text="It's great to be back!"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center|left"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/letterLayout"
+                 android:layout_toLeftOf="@id/notificationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:gravity="right"
+                android:layout_centerVertical="true"
+                android:id="@+id/notificationLayout"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginRight="-9dp"
+                    android:src="@drawable/wishlist"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:gravity="center"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="10"
+                    android:textColor="@color/white"
+                      android:backgroundTint="@color/primaryColor"
+                    android:background="@drawable/circle_shape"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+             android:layout_marginTop="10dp"
+            android:background="@drawable/circle_border"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/cart"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:padding="3dp"
+                android:layout_gravity="center"
+                android:textColor="@color/secondaryColor"
+                android:textColorHint="@color/secondaryColor"
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Search.."
+                android:backgroundTint="@null"
+                android:background="@null"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="15dp"
+            android:background="@color/secondaryColor"
+            android:elevation="8dp"
+            android:translationZ="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_marginTop="15dp"
+            android:scrollbars="none"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/horizontalRV"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+                <TextView
+                    android:textColor="@color/primaryColor"
+                    android:textSize="17dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Popular Right Now"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popularRv"
+                     android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
 
     <!-- Bottom Navigation Bar -->
 
-
-    <include layout="@layout/bottom_navigation" />
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_marginBottom="5dp"
+              android:background="@color/secondaryColor"
+             android:layout_width="match_parent"
+            android:layout_height="0.3dp"/>
+        <include layout="@layout/bottom_navigation" />
+    </LinearLayout>
  </LinearLayout>
